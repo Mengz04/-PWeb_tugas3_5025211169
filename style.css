@@ -1,0 +1,225 @@
+@font-face {
+    font-family: biotifSB;
+    src: url(./src/Biotif-SemiBold.ttf);
+}
+@font-face {
+    font-family: biotifReg;
+    src: url(./src/Biotif-Regular.ttf);
+}
+@font-face {
+    font-family: biotifLit;
+    src: url(./src/Biotif-Light.ttf);
+}
+@font-face {
+    font-family: biotifBlack;
+    src: url(./src/Biotif-Black.ttf);
+}
+body{
+    margin:0px;
+}
+
+.main_container{
+    position: relative;
+    height: 720px;
+    width: 100%;
+    background-color: rgb(22, 22, 22);
+}
+
+.navbar{
+    height: 15%;
+    width: 100%;
+    padding: 15px 5%;
+    padding-right: 10%;
+    box-sizing: border-box;
+    vertical-align: middle;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(22, 22, 22));
+}
+.navbutton{
+    font-family: biotifSB;
+    float: right;
+    margin: 40px 25px;
+    text-decoration: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    color: white;
+    transition: .2s ease .1s;
+}
+.modebutton{
+    font-size: 20px;
+    margin-top: 34px;
+}
+.logo{
+    transition: .3s ease .1s;
+}
+.page_container{
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.half_page_container{
+    position: relative;
+    display: flex;
+    width: 49%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.car_picture{
+    width: 70%;
+    margin-top: 50%;
+    margin-bottom: 50%;
+    transition: .5s ease .1s;
+}
+.slide_button{
+    position: absolute;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    color: rgba(255, 255, 255, 0.71);
+    font-size: 50px;
+    transition: .3s ease .1s;
+}
+.button_right{
+    right: 0;
+}
+.button_left{
+    left:0;
+}
+.description{
+    position: relative;
+    font-family: biotifSB;
+    width: 100%;
+    padding: 0 15%;
+    transition: .2s ease .1s;
+    color: aliceblue;
+}
+.description > h1{
+    font-family: biotifSB;
+}
+.description > p{
+    text-align: justify;
+    font-family: biotifReg;
+}
+.motto{
+    font-family: biotifBlack;
+    position: absolute;
+    color: #E82127;
+    font-size: 40px;
+    top: 200px;
+    left: 7%;
+}
+.car_picture:hover{
+    width: 75%;
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.304));
+}
+.slide_button:hover{
+    color: #E82127;
+    filter: drop-shadow(0px 0px 5px #e8212889);
+}
+.navbutton:hover{
+    color: #e6555a;
+    scale: 1.1;
+    filter: drop-shadow(0px 0px 5px #d74b5089);
+}
+.logo:hover{
+    scale: 1.05;
+}
+.slide_button:hover{
+    scale: 1.1;
+}
+
+.main_container.lightmode{
+    background-color: rgb(221, 221, 221);
+    color:black;
+}
+.navbar.lightmode{
+    background-image: linear-gradient(rgb(200, 200, 200), rgb(221, 221, 221));
+    color: black;
+}
+
+.navbutton.lightmode, .description.lightmode{
+    color: black;
+}
+.slide_button.lightmode{
+    color: rgba(0, 0, 0, 0.498);
+}
+.navbutton.lightmode:hover, .slide_button.lightmode:hover{
+    color: #e6555a;
+    scale: 1.1;
+    filter: drop-shadow(0px 0px 5px #d74b5089);
+}
+
+img[src="./src/modelS.png"].car_picture.lightmode{
+    content: url(./src/modelSblack.png);
+}
+img[src="./src/model3.png"].car_picture.lightmode{
+    content: url(./src/model3black.png);
+}
+img[src="./src/modelX.png"].car_picture.lightmode{
+    content: url(./src/modelXblack.png);
+}
+img[src="./src/modelY.png"].car_picture.lightmode{
+    content: url(./src/modelYblack.png);
+}
+
+.footer{
+    position: absolute;
+    bottom: -80px;
+    width:100%;
+    height:80px;
+    background-image: linear-gradient(rgb(22, 22, 22), rgb(0, 0, 0));
+    font-family: BiotifLit;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.747);
+}
+.footer > p{
+    margin-top: 35px;
+    font-size: 15px;
+    letter-spacing: normal;
+    transition: .3s ease .1s;
+}
+.footer > p:hover{
+    letter-spacing: 3px;
+}
+
+.footer.lightmode{
+    background-image: linear-gradient(rgb(221, 221, 221), rgb(200, 200, 200));
+    color: rgba(0, 0, 0, 0.747);
+}
+@media (max-width:800px){
+    .motto{
+        display: none;
+    }
+    .page_container{
+        flex-direction: column-reverse;
+    }
+    .half_page_container{
+        width: 100%;
+        height: 50%;
+    }
+}
+@media (max-width:700px){
+    .navbutton{
+        font-size: 15px;
+        margin: 40px 15px;
+    }
+    .navbutton.modebutton{
+        margin: 37px 10px;
+    }
+}
+@media (max-width:600px){
+    .logo{
+        height: 50%;
+        margin-top: 25px;
+    }
+    .navbutton{
+        font-size: 15px;
+        margin: 40px 10px;
+    }
+    .modebutton{
+        margin: 30px 10px;
+    }
+}

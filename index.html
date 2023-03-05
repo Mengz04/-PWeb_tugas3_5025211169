@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main_container">
+        <div class="navbar">
+            <a href="#"><img class="logo" src="./src/tesla_logo.png" height="100%"></a>
+            <button class="navbutton modebutton" onclick="toggleLight()">&#9728;</button>
+            <a class="navbutton" href="#"> Dealers </a>
+            <a class="navbutton" href="#"> Contact </a>
+            <a class="navbutton" href="#"> Home </a>
+        </div>
+        <div class="page_container">
+            <div class="motto">The future is sustainable</div>
+            <div class="half_page_container picture">
+                <div class="description">
+                    <h1>Tesla Model S</h1>
+                    <p>Model S has the quickest acceleration of any vehicle in production. Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation. </p>
+                </div>
+                <div class="description">
+                    <h1>Tesla Model 3</h1>
+                    <p>Model 3 comes with the option of dual motor all-wheel drive, 20” Überturbine Wheels and Performance Brakes for total control in all weather conditions. A carbon fiber spoiler improves stability at high speeds, all allowing Model 3 to accelerate from 0-60 mph* in as little as 3.1 seconds. </p>
+                </div>
+                <div class="description">
+                    <h1>Tesla Model X</h1>
+                    <p>Model X Plaid is the highest performing SUV ever built. Updated battery architecture enables both Long Range and Plaid configurations to complete back-to-back track runs without performance degradation.</p>
+                </div>
+                <div class="description">
+                    <h1>Tesla Model Y</h1>
+                    <p>Model Y provides maximum versatility—able to carry 7 passengers and their cargo. Each second row seat folds flat independently, creating flexible storage for skis, furniture, luggage and more. The liftgate opens to a low trunk floor that makes loading and unloading easy and quick. </p>
+                </div>
+            </div>
+            <div class="half_page_container text">
+                <button class="slide_button button_left" onclick="plusDivs(-1)"> &#8249; </button>
+                <img class="car_picture" src="./src/modelS.png">
+                <img class="car_picture" src="./src/model3.png">
+                <img class="car_picture" src="./src/modelX.png">
+                <img class="car_picture" src="./src/modelY.png">
+                <button class="slide_button button_right" onclick="plusDivs(1)"> &#8250; </button>
+            </div>
+
+        </div>
+        <div class="footer">
+            <p>supports page sizing</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleLight(){
+            var element = document.querySelector(".main_container");
+            element.classList.toggle("lightmode");
+
+            var element = document.querySelector(".navbar");
+            element.classList.toggle("lightmode");
+
+            var element = document.querySelectorAll(".navbutton");
+            for (var i = 0; i < element.length; i++) {
+                element[i].classList.toggle("lightmode");
+            }
+
+            var element = document.querySelectorAll(".description");
+            for (var i = 0; i < element.length; i++) {
+                element[i].classList.toggle("lightmode");
+            }
+            var element = document.querySelectorAll(".slide_button");
+            for (var i = 0; i < element.length; i++) {
+                element[i].classList.toggle("lightmode");
+            }
+
+            var element = document.querySelectorAll(".car_picture");
+            for (var i = 0; i < element.length; i++) {
+                element[i].classList.toggle("lightmode");
+            }
+
+            var element = document.querySelector(".footer");
+            element.classList.toggle("lightmode");
+        }
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("car_picture");
+          var y = document.getElementsByClassName("description");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            y[i].style.display = "none";
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block"; 
+          y[slideIndex-1].style.display = "block";  
+        }
+        </script>
+</body>
+</html>
